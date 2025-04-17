@@ -8,16 +8,27 @@ la calificación en un alert según los siguientes rangos de nota:
 8-9: Notable
 10: Sobresaliente
 */
-do {
-  const nota = parseInt(prompt("Ingrese nota"));
 
+let entrada;
+do {
+  entrada = prompt("Ingrese nota (o presione Cancelar para salir)");
+
+  if (entrada === null) {
+    document.writeln("Fin del programa");
+    console.log("Fin del programa");
+    break;
+  }
+
+  const nota = parseInt(entrada);
+  document.writeln("Nota ingresada ", entrada);
+  console.log("nota ingresada: ", nota);
   if (!isNaN(nota) && nota >= 0 && nota <= 10) {
     if (nota >= 0 && nota <= 2) {
       document.writeln("<p>Muy deficiente</p>");
       console.log("Muy deficiente");
     } else if (nota >= 3 && nota <= 4) {
-      document.writeln("<p>Insuficiente</p>");
-      console.log("Insuficiente");
+      document.writeln("<p>insuficiente</p>");
+      console.log("insuficiente");
     } else if (nota >= 5 && nota <= 6) {
       document.writeln("<p>Suficiente</p>");
       console.log("Suficiente");
@@ -32,7 +43,7 @@ do {
       console.log("Sobresaliente");
     }
   } else {
-    document.writeln("<p>Número inválido</p>");
-    console.log("Resultado: Número inválido");
+    document.writeln("Número fuera de rango");
+    console.log("Número fuera de rango");
   }
-} while (confirm("¿Deseas realizar otra operación?"));
+}while (true)
