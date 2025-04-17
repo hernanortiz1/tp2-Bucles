@@ -5,6 +5,6 @@ guión -.
 */
 
 do {
-    const opcion = prompt("Ingrese frases");
-    document.writeln(`${opcion} -`);
-  } while (confirm("¿Deseas ingresar otra frase?"));
+  const opcion = prompt("Ingrese frases");
+  document.writeln(`${opcion} -`);
+} while (confirm("¿Deseas ingresar otra frase?"));
